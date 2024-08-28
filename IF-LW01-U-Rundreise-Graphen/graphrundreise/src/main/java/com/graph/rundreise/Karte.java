@@ -42,7 +42,7 @@ public class Karte{
     public void rundreise(Vertex start) {
         // Setze den Start auf besucht
         start.setMark(true);
-        
+        double entfernung = 0;
         Vertex current = start;
         while (!karte.allVerticesMarked()) {
             // Bekomme die Nachbarn des aktuellen Vertex
@@ -73,12 +73,13 @@ public class Karte{
             }
             // Als besucht markieren
             naechsterNachbar.setMark(true);
+            entfernung += karte.getEdge(current, naechsterNachbar).getWeight(); 
             System.out.print(naechsterNachbar.getID() + " - ");
             current = naechsterNachbar;
         }
         System.out.println(start.getID());
 
-
+        System.out.println("Entfernung: " + entfernung + " Entfernungseinheiten");
     }
     
     
