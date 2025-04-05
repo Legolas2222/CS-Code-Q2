@@ -1,0 +1,51 @@
+public class Satzcompiler {
+
+  // Anfang Attribute
+  String satz="";
+  String tokenliste="";
+  
+  String[] artikel = {"der","die","das","den"};
+  String[] substantiv = {"hund","katze","maus"};
+  String[] praedikat = {//Eigener Code};
+  // Ende Attribute
+
+  // Anfang Methoden
+  public Satzcompiler(String satz) {
+    this.satz = satz;
+  }
+  
+  public boolean istArtikel(String terminal) {
+    for (int i = 0; i < artikel.length; i++) {
+      if (terminal.equals(artikel[i])) return true;
+    }
+    return false;
+  }
+
+  public boolean istSubstantiv(String terminal) {
+    //Eigener Code
+    return false;
+  }
+
+  public boolean istPraedikat(String terminal) {
+    //Eigener Code
+    return false;
+  }
+
+  public boolean scannen(){
+    String[] terminale = satz.split(" ");
+    for (int i = 0; i < terminale.length; i++) {
+      if (istArtikel(terminale[i])) {
+        tokenliste += "A";
+      } 
+      //else if
+      //Eigener Code;
+      }
+    }
+    return true;
+  }
+  
+  public boolean parsen() {
+    return (tokenliste.equals("ASPAS") || tokenliste.equals("ASP"));
+  }
+  // Ende Methoden
+}
