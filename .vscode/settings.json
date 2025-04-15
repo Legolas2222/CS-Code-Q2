@@ -4,5 +4,12 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar"
     ],
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "java": true
+    }
 }
